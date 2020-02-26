@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="QAQC_Guardian.Views.CraftView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QAQC_Guardian.Views"
+             xmlns:Models="clr-namespace:QAQC_Guardian.Models"
+             xmlns:Views="clr-namespace:QAQC_Guardian.Views"
+             xmlns:ViewModels="clr-namespace:QAQC_Guardian.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="5,5,5,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32.5"/>
+            <RowDefinition Height="32.5"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                   Text="Craft name:"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1"
+                     Height="25"
+                     Text="{Binding CraftName, UpdateSourceTrigger=PropertyChanged}"
+                     TextWrapping="NoWrap"
+                     VerticalContentAlignment="Center"
+                     VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Text="Craft folder:"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1"
+                     Height="25"
+                     Text="{Binding CraftFolder, UpdateSourceTrigger=PropertyChanged}"
+                     TextWrapping="NoWrap"
+                     VerticalContentAlignment="Center"
+                     VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="2"
+              Height="25"
+              Margin="0,5,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="105"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Button Content="Cancel"
+                        Width="100"
+                        HorizontalAlignment="Right"
+                        Command="{Binding CraftCancel}"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button Content="Save"
+                        Width="100"
+                        HorizontalAlignment="Right"
+                        Command="{Binding CraftSave}"
+                        IsDefault="True"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
